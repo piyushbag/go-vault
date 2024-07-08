@@ -1,0 +1,8 @@
+1
+/var/lib/postgresql/data
+1719290269
+5432
+/var/run/postgresql
+*
+       10         0
+stopping
