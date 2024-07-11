@@ -1,0 +1,35 @@
+// what protool version to use
+syntax = "proto3";
+
+// package name
+option go_package = "github.com/piyushbag/go-tutorials/common/orders";
+
+service OrderService {
+    rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse) {}
+}
+
+message Order {
+    string OrderID = 1;
+    string ProductID = 2;
+    string CustomerID = 3;
+    int32 Quantity = 4;
+
+}
+
+message CreateOrderRequest {
+    int32 customerID = 1;    
+    int32 productID = 2;
+    int32 quantity = 3;
+}
+
+message CreateOrderResponse {
+    string Status = 1;
+}
+
+message GetOrderRequest {
+    string OrderID = 1;
+}
+
+message GetOrderResponse {
+    repeated Order orders = 1;
+}
